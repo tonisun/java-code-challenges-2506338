@@ -4,7 +4,6 @@ package com.linkedinlearning.challenges;
 public class VATCalculator {
 
   private double vatRate;
-  private static final char CURRENCY_SYMBOL = '€';
 
   // Default constructor
   public VATCalculator() {
