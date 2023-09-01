@@ -4,6 +4,7 @@ package com.linkedinlearning.challenges;
 public class VATCalculator {
 
   private double vatRate;
+  private static final char CUR = '€';
 
   // Default constructor
   public VATCalculator() {
@@ -25,16 +26,19 @@ public class VATCalculator {
     double vatAmount = netPrice * vatRate;
     double grossPrice = calculateGrossPrice(netPrice);
 
-    return String.format("Netto: %,.2f €\nVAT (%,.2f): %,.2f €\nTotal: %,.2f €", netPrice, vatRate, vatAmount, grossPrice);
+    return String.format("Netto: %,.2f %c\nVAT (%,.2f): %,.2f %c\nTotal: %,.2f %c", netPrice, CUR, vatRate, vatAmount, CUR, grossPrice, CUR);
   }
 
   public static void main(String[] args) {
+
     VATCalculator calculator1 = new VATCalculator();
     VATCalculator calculator2 = new VATCalculator(0.07);
 
     double netPrice = 100.00;
     
+    System.out.println();
     System.out.println(calculator1.renderInvoice(netPrice));
+    System.out.println();
     System.out.println(calculator2.renderInvoice(netPrice));
   }
 
